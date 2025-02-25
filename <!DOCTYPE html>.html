@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Access</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+        }
+        .container {
+            text-align: center;
+        }
+        .lock-icon {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        .input-container {
+            margin-top: 10px;
+        }
+        input {
+            padding: 10px;
+            width: 250px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #e65aa0;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #bd3577;
+        }
+        .error {
+            background-color: #ffcccc;
+        }
+        .error input {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+        <dotlottie-player src="https://lottie.host/b52b7d48-332a-49c4-8dc1-13773c50f61e/C5ArSZZuaX.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+        <h3>What zodiac that born in middle of July?</h3>
+        <h4>Please use capital in the first</h4>
+        <div class="input-container">
+            <input type="password" id="password" placeholder="Enter your password">
+            <button onclick="checkPassword()">Submit</button>
+        </div>
+    </div>
+    <script>
+        function checkPassword() {
+            const passwordInput = document.getElementById("password");
+            const body = document.body;
+            if (passwordInput.value === "Cancer") {
+                alert("Yeayyyy, welcome to my page");
+                window.location.href = "https://jihans-portofolio.webflow.io";
+            } else {
+                body.classList.add("error");
+                setTimeout(() => {
+                    body.classList.remove("error");
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
